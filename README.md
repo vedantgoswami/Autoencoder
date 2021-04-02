@@ -25,3 +25,10 @@ As Max pooling is a sampling strategy that picks the maximum value from a window
  <p align="center">
  <img src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/Transposed%20convolution.png"> 
  </p>
+
+### My Encoder Sample
+<p>
+<img src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/My%20model.png">
+ </p>
+As we can see that there is a data loss due to compression as the image is diminised but still it is recognizable as 7.<br>
+The above image is 28
