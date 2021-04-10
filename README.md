@@ -63,9 +63,23 @@ x_test = x_test/255.0
 ```
 
 The Encoder model takes images as input of shape <b>(28 x 28)</b> and then flattening it to vector of pixels of shape <b>(786,)</b>.
+
+<h3> Decoder Part</h3>
+
+```
+    decoder_input = keras.layers.Dense(level*level, activation="relu")(encoder_output)
+    x = keras.layers.Dense(784, activation="relu")(decoder_input)
+    decoder_output = keras.layers.Reshape((28, 28, 1))(x)
+```
+The Decoder takes encoded images or the compressed image and tries to reconstruct it to (28 x 28).
+
 ### My Encoder Sample
 <p>
 <img src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/My%20model.png">
  </p>
-As we can see that there is a data loss due to compression as the image is diminised but still it is recognizable as 7.<br>
-The above image is 28
+As we can see that there is a data loss due to compression as the image is diminished but still it is recognizable as 7.<br>
+
+
+### Let's see how to Denoise the image using autoencoder.
+
+
