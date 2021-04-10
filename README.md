@@ -81,5 +81,8 @@ As we can see that there is a data loss due to compression as the image is dimin
 
 
 ### Let's see how to Denoise the image using autoencoder.
+The autoencoder tries to reconstruct the input data. So, if we give corrupted images as input, the autoencoder will try to reconstruct noisy images only.A small tweak is all that is required here. Instead of using the input and the reconstructed output to compute the loss, we can calculate the loss by using the ground truth image and the reconstructed image. This diagram illustrates my point wonderfully:
 
-
+<p align="center">
+<img src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/img_5.png">
+</p>
