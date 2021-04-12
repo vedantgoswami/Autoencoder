@@ -86,3 +86,35 @@ The autoencoder tries to reconstruct the input data. So, if we give corrupted im
 <p align="center">
 <img src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/img_5.png">
 </p>
+
+#### Now we will add noise to images.
+
+```
+def add_noise(img,random_chance=10):
+    noisy = []
+    for row in img:
+        new_row = []
+        for pix in row:
+            if(random.choice(range(100))<= random_chance):
+                new_val = random.uniform(0,1)
+                new_row.append(new_val)
+            else:
+                new_row.append(pix)
+                
+        noisy.append(new_row)
+    return np.array(noisy)
+```
+
+All this function does is iterate through each pixel and randomly, with a default of 5%, change the pixel to be white.
+
+<p align="center">
+ <img align="center" src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/noised1.png">
+ </p>
+ I had added noise with probability of 10% .
+ So after passing the image through our autoencoder, most of the noise got removed but some of the image pixel were dead but after all the we got is recognizable.
+ <p align="center">
+ <img align="center" src="https://github.com/vedantgoswami/Autoencoder/blob/main/Images/denoised1.png">
+ </p>
+ 
+ After Trying this on mnist image i will now work on the real RGB images and try them to denoise.... soon.
+ 
